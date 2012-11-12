@@ -5,6 +5,8 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'rails', '3.2.8'
 gem 'pg'
+gem 'httparty'
+gem 'informal'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -28,4 +30,5 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'shoulda'
+  gem 'vcr'
 end
