@@ -1,5 +1,6 @@
 <h1>Profile#index</h1>
-<% content_for :angular_script, "search/application" %>
+<% content_for :angular_script, "beer/application" %>
+
 
 <div data-ng-app="beerModule" data-ng-controller="BeerCtrl">
 <ul>
@@ -8,10 +9,7 @@
 		</div>
 	</li>
 
-</div>
 
-
-<div data-ng-app="searchModule" data-ng-controller="SearchCtrl">
 <form data-ng-submit="searchNow()">
 <input type="text" data-ng-model="query" name="search_query">
 <input type="submit" value="Search" name="Search">
