@@ -1,0 +1,11 @@
+beerModule = angular.module('beerModule', ["ngResource"])
+
+beers = ($resource) ->
+  $resource '/beers/:id', {}, {
+                                  index: { method: 'GET', isArray: true },
+                                  show: { method: 'GET' },
+                                  create: { method: 'POST' },
+                                  update: { method: 'PUT' },
+                                  destroy: { method: 'DELETE' }
+                                }
+

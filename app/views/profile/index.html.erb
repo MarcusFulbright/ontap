@@ -1,6 +1,27 @@
 <h1>Profile#index</h1>
+<% content_for :angular_script, "search/application" %>
 
-<%= form_for Search.new do |f| %>
- <%= f.text_field :query %>
- <%= f.submit "Search" %>
- <%- end %>
+<div data-ng-app="beerModule" data-ng-controller="BeerCtrl">
+<ul>
+	<li data-ng-repeat="beer in beers">
+		<div>{{beer.name}}
+		</div>
+	</li>
+
+</div>
+
+
+<div data-ng-app="searchModule" data-ng-controller="SearchCtrl">
+<form data-ng-submit="searchNow()">
+<input type="text" data-ng-model="query" name="search_query">
+<input type="submit" value="Search" name="Search">
+</form>
+<ul>
+	<li data-ng-repeat="result in results">
+		<div>{{result.name}}
+		</div>
+		<button data-ng-click="addBeer(result)">Add</button>
+	</li>
+</ul>
+
+</div>

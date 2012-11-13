@@ -5,7 +5,9 @@
   <title>Ontap</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "angular" %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag yield(:angular_script) -%>
 </head>
 <body>
 
