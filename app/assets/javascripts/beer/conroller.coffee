@@ -14,7 +14,8 @@
 
   $scope.addBeer = (beerData)->
     beer = new Beer(beerData) 
-    beer.$create -> 
+    beer.$create {}, () -> 
       $scope.beers.push(beer)
+
 
 @BeerCtrl.$inject = ['$scope', '$http', 'Beer']

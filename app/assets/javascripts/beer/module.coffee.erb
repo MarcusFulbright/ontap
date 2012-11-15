@@ -8,4 +8,4 @@ beers = ($resource) ->
                                   update: { method: 'PUT' },
                                   destroy: { method: 'DELETE' }
                                 }
-
+beerModule.factory 'Beer', ['$resource', beers] 

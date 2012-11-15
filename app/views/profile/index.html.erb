@@ -4,11 +4,8 @@
 
 <div data-ng-app="beerModule" data-ng-controller="BeerCtrl">
 <ul>
-	<li data-ng-repeat="beer in beers">
-		<div>{{beer.name}}
-		</div>
-	</li>
-
+	<li data-ng-repeat="beer in beers"> {{beer.name}} </li>
+</ul>
 
 <form data-ng-submit="searchNow()">
 <input type="text" data-ng-model="query" name="search_query">
@@ -17,8 +14,10 @@
 <ul>
 	<li data-ng-repeat="result in results">
 		<div>{{result.name}}
+			 {{result.abv}}
+
 		</div>
-		<button data-ng-click="addBeer(result)">Add</button>
+		<button data-ng-click="addBeer(result.name)">Add</button>
 	</li>
 </ul>
 
