@@ -5,5 +5,5 @@ Ontap::Application.routes.draw do
   devise_for :users
   root :to => "home#index"
   match "searches" => "searches#show"
-  match "beers" =>"searches#list"
+  resources :beers
 end

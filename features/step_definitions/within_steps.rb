@@ -3,8 +3,8 @@ require 'cgi'
 
 def selector_for(description)
   case description
-  when "the results section"
-    'section.results'
+  when "beer list"
+    'ul.beerList'
   when /(.*)'s comment/
       comment = Comment.find_by_commenter($1)
       ".comment_#{comment.id}"

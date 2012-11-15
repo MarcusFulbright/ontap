@@ -3,7 +3,7 @@
 
 
 <div data-ng-app="beerModule" data-ng-controller="BeerCtrl">
-<ul>
+<ul class="beerList">
 	<li data-ng-repeat="beer in beers"> {{beer.name}} </li>
 </ul>
 
@@ -11,13 +11,13 @@
 <input type="text" data-ng-model="query" name="search_query">
 <input type="submit" value="Search" name="Search">
 </form>
-<ul>
+<ul class='results'>
 	<li data-ng-repeat="result in results">
 		<div>{{result.name}}
 			 {{result.abv}}
 
 		</div>
-		<button data-ng-click="addBeer(result.name)">Add</button>
+		<button data-ng-click="addBeer(this.result.name)" name="list_beer">Add</button>
 	</li>
 </ul>
 

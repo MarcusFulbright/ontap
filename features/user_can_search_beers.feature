@@ -1,4 +1,4 @@
-@javascript
+@javascript @wip
 Feature: User Can Search Beers
 
 	Background:
@@ -10,8 +10,7 @@ Feature: User Can Search Beers
 		And I fill in "kingpin" for "search_query"
 		And I press "Search"
 		Then I should see "kingpin"
-
-	@wip
+		
 	Scenario: By Beer Name(2)
 		And I fill in "chaser pale" for "search_query"
 		And I press "Search"

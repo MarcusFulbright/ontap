@@ -9,9 +9,8 @@
     .success (json) ->
       $scope.results = json
 
-
+ 
   $scope.beers = Beer.index()
-
   $scope.addBeer = (beerData)->
     beer = new Beer(beerData) 
     beer.$create {}, () -> 

@@ -1,9 +1,11 @@
 Feature: Add Beer
-	
+	@javascript
 	Scenario: Add Beer
 		Given I am signed in
 		And I press "Add Beer"
-		And I fill in "chaser pale" for "Beer Search"
-		And I click "Chaser Pale"
-		When I click "Add Beer"
+		And I fill in "chaser pale" for "search_query"
+		And I press "Search"
+		Then I should see "Chaser Pale"
+		When I press "list_beer"
 		Then I should see "Your Beer Has Been Added"
+		And I should see "Chaser Pale" within "beer list"
