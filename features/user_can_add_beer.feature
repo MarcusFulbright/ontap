@@ -1,5 +1,5 @@
 Feature: Add Beer
-	@javascript
+
 	Scenario: Add Beer
 		Given I am signed in
 		And I press "Add Beer"
