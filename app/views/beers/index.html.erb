@@ -1,0 +1,9 @@
+<div>
+<%- @search = Search.new %>
+<%= form_for @search, :url => {:action => "index" }, :method => :get do |form| %>
+	<%= form.text_field :query %>
+	<%= form.submit "Search" %>
+<%- end %>
+
+
+</div>
