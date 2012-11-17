@@ -1,8 +1,7 @@
 class BeersController < ApplicationController
 require 'pintlabs_api'
   
-  def index
-  	@search = Search.new 
+  def index 
     @beers = PintlabsAPI.search(params[:query])["data"]
   end
   
