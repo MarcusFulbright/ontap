@@ -1,10 +1,17 @@
 <div>
-<%- @beer = Beer.new %>
-<%= form_for @beer, :url => {:action => "index" }, :method => :get do |form| %>
+
+<%= form_for Beer.new, :url => {:action => "index" }, :method => :get do |form| %>
 	<%= form.text_field :query %>
 	<%= form.submit "Search" %>
 <%- end %>
-</div>
-<%- @beer.each do |list| %>
-	<%=list.beer.name %>
+
+<%- i = 0 %>
+<%- @beer["data"].each do |list| %>
+<p>
+	<%= @beer["data"][i]["name"] %> 
+	<button>Add Beer</button>
+</p>
+<%- i = i + 1 %>
 <%- end %>
+
+</div>
