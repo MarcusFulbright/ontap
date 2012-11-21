@@ -5,13 +5,12 @@
 	<%= form.submit "Search" %>
 <%- end %>
 
-<%- i = 0 %>
-<%- @beer["data"].each do |list| %>
-<p>
-	<%= @beer["data"][i]["name"] %> 
+
+<%- @beer["data"].length.times do |i| %>
+	<p><%= @beer["data"][i]["name"] %>
 	<button>Add Beer</button>
-</p>
-<%- i = i + 1 %>
+	</p>
 <%- end %>
+
 
 </div>

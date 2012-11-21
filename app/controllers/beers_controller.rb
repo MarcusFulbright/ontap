@@ -1,11 +1,12 @@
 class BeersController < ApplicationController
 require 'pintlabs_api'
-require 'json'
-
   
-  def index 
-    @beer = JSON.parse PintlabsAPI.search(params[:beer]).response.body
+  def index
+  	if params[:beer]
+    	@beer = PintlabsAPI.search(params[:beer][:query])
+  	end
   end
-  
+
+
 end
 
