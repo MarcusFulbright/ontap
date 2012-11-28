@@ -11,7 +11,13 @@
 <%- if @search.name %>
 	<ul>
 	<%- for name in @search.name %>
-		<li> <%= name %> </li>
+		<li> 
+			<%= name %> 
+			<%= form_for Beer.new, :method => :post do |form| %>
+				<%= hidden_field(:name, name) %>
+				<%= form.submit "Add" %>
+			<%- end %>
+	    </li>
 	<%- end %>
 	</ul>
 <%- end %>

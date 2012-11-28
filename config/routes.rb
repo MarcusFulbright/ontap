@@ -6,9 +6,10 @@ Ontap::Application.routes.draw do
   root :to => "home#index"
   
   resources :searches
+  resources :beers
 
   resources :users do 
-  	resources :beers
+  	resources :beer_list
   end
 
 end
