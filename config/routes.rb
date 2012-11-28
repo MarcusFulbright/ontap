@@ -4,8 +4,9 @@ Ontap::Application.routes.draw do
 
   devise_for :users
   root :to => "home#index"
-  resources :beers
   
+  resources :searches
+
   resources :users do 
   	resources :beers
   end

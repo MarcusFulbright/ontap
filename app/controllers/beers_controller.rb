@@ -6,7 +6,10 @@ require 'pintlabs_api'
     	@beer = PintlabsAPI.search(params[:beer][:query])
   	end
   end
-
+  
+  def create
+    @beer = Beer.create(params[:beer])
+  end
 
 end
 
