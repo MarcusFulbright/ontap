@@ -7,4 +7,11 @@
 
 </div>
 
-<%= @search.list_name %>
+
+<%- if @search.name %>
+	<ul>
+	<%- for name in @search.name %>
+		<li> <%= name %> </li>
+	<%- end %>
+	</ul>
+<%- end %>

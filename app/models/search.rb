@@ -16,7 +16,4 @@ class Search < ActiveRecord::Base
   	def query
   	end
 
-  	def list_name
-  	end
-
 end
