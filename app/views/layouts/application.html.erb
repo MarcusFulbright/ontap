@@ -6,14 +6,13 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
-	
 	<!-- Uncomment to make IE8 render like IE7 -->
 	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 	
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+	<title>onTap</title>
   
 	<!-- Included CSS Files -->
 	<%= stylesheet_link_tag    "application" %>
@@ -50,7 +49,14 @@
 		</div>
 	</div>
 </div>
-
+<div class="row">
+	<%- flash.each do|type, message| %>
+		<div class="alert-box secondary">
+			<p>There was an <%= type %> for you. <%= message %></p>
+			<a href="" class= "close">&times </a>
+		</div>
+	<%- end %>
+</div>
   <%= yield %>
 </body>
 </html>
