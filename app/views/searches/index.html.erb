@@ -8,19 +8,19 @@
 </div>
 
 <%- if @search.name %>
-<ul class="pricing-table">
+<ul style="list-style-type: none">
 <%- for name in @search.name %>
 	<div class="row">
 		<div class="seven columns centered">
 
-		<li class="bulet-item"> 
+		<li class="panel"> 
 			<div class="five columns">
 				<%= name %>
 			</div> 
 			<%= form_for Beer.new, :method => :post do |form| %>
 				<%= hidden_field_tag("beer[name]", name) %>
-				<%= hidden_field_tag("beer[user_id]", current_user) %>
-				<%= form.submit "Add", :class => "button one columns offset-by-one" %>
+				<%= hidden_field_tag("beer[user_id]", current_user.id) %>
+				<%= form.submit "Add", :class => "button" %>
 			<%- end %>
 	    </li>
 	</div>
