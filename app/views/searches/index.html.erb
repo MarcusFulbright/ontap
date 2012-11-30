@@ -1,23 +1,30 @@
-<div>
-
-<%= form_for @search, :url => {:action => "index" }, :method => :get do |form| %>
-	<%= form.text_field :query %>
-	<%= form.submit "Search" %>
-<%- end %>
-
+<div class="panel">
+	<div class="six columns centered">
+		<%= form_for @search, :url => {:action => "index" }, :method => :get do |form| %>
+			<%= form.text_field :query %>
+			<%= form.submit "Search", :class => "button" %>
+		<%- end %>
+	</div>
 </div>
 
 <%- if @search.name %>
-	<ul>
-	<%- for name in @search.name %>
-		<li> 
-			<%= name %> 
+<ul class="pricing-table">
+<%- for name in @search.name %>
+	<div class="row">
+		<div class="seven columns centered">
+
+		<li class="bulet-item"> 
+			<div class="five columns">
+				<%= name %>
+			</div> 
 			<%= form_for Beer.new, :method => :post do |form| %>
 				<%= hidden_field_tag("beer[name]", name) %>
-				<%= hidden_field_tag("beer[user_id]", current_user.id) %>
-				<%= form.submit "Add" %>
+				<%= hidden_field_tag("beer[user_id]", current_user) %>
+				<%= form.submit "Add", :class => "button one columns offset-by-one" %>
 			<%- end %>
 	    </li>
-	<%- end %>
-	</ul>
+	</div>
+	</div>
+<%- end %>
+</ul>
 <%- end %>

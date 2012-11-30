@@ -1,4 +1,30 @@
 <%- if user_signed_in? %>
-<%= link_to "Add Beer", searches_path %>
+<div class="row">
+	<div class="seven columns centered">
+		<%= link_to "Dawg, tried any new beers lately?", searches_path, :class => "button large radius" %>
+	</div>
+</div>
+<br />
+<br />
+<div class="row">
+	<div class="seven columns centered">
+		<%= link_to "Trying to decide what to drink?", user_beers_path(current_user), :class => "button large radius" %>
+	</div>
+</div>	
+<%- else %>
+<br />
+<br />
+	<div class="row">
+		<div class="seven columns centered">
+			<%= link_to "Yo dawg, have an account? Just click here foo!", new_user_session_path, :class => "button large radius" %> 
+		</div>
+	</div>
+	<br />
+	<br />
+	<div class="row">
+		<div class="seven columns centered">
+			<%= link_to "You a sucka without an account? Just click here", new_user_registration_path, :class => "button large radius" %>
+		</div>
 <%- end %>
+
 

@@ -1,0 +1,39 @@
+<div class="row">
+	<div class="six columns centered">
+		<h2>Sign up</h2>
+	</div>
+</div>
+<div class="panel">
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  	<%= devise_error_messages! %>
+  	<div class="row">
+  		<div class="two columns">
+  			<%= f.label :email, :class => "right inline" %>
+  		</div>
+  		<%= f.email_field :email, :class => "four columns" %>
+  		<div class="two columns">
+			<%= f.label :password, :class => "right inline" %>
+		</div>
+  		<%= f.password_field :password, :class => "four columns" %>
+  	</div>
+  	<div class="row">
+  		<div class = "eight columns">
+  			<%= f.label :password_confirmation, :class => "right inline" %>
+  		</div>
+  			<%= f.password_field :password_confirmation, :class => "four columns" %>
+  	</div>
+  	<br />
+  	<div class="row">
+  		<div class ="two columns centered">
+			<%= f.submit "Sign up", :class => "button" %>
+		</div>
+	</div>
+	<% end %>
+</div>
+<div class="row">
+	<div class="two columns centered">
+		<p>
+			<%= render "devise/shared/links" %>
+		</p>
+	</div>
+</div>
