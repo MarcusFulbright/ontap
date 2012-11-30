@@ -1,4 +1,5 @@
 class Beer < ActiveRecord::Base
-	attr_accessible :name
+	attr_accessible :name, :user_id
+	belongs_to :user
 
 end

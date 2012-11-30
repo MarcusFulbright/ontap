@@ -7,14 +7,14 @@
 
 </div>
 
-
 <%- if @search.name %>
 	<ul>
 	<%- for name in @search.name %>
 		<li> 
 			<%= name %> 
 			<%= form_for Beer.new, :method => :post do |form| %>
-				<%= hidden_field(:name, name) %>
+				<%= hidden_field_tag("beer[name]", name) %>
+				<%= hidden_field_tag("beer[user_id]", current_user.id) %>
 				<%= form.submit "Add" %>
 			<%- end %>
 	    </li>

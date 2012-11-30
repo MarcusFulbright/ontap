@@ -3,11 +3,11 @@ class Search < ActiveRecord::Base
 	include Informal::Model
 	attr_accessor :name
 
-  	def initialize(name=nil)
-  		if name
+  	def initialize(beer=nil)
+  		if beer
   			@name = []
-  			name["data"].length.times do |i|
-  				@name[i] = name["data"][i]["name"]
+  			beer["data"].length.times do |i|
+  				@name[i] = beer["data"][i]["name"]
   				i += 1
   			end
   		end
