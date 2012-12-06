@@ -4,10 +4,10 @@ Feature: User authentication
   Scenario: Signed out users see appropriate links
     Given I am on the homepage
     Then I should see "Sign In"
-    And I should see "Sign Up"
-    And I should not see "Sign Out"
+    Then I should see "Sign into your account here"
+    Then I should see "Sign up for an account here"
+    Then I should not see "Sign Out"
    
-
   Scenario: Signed in users see appropriate links
     Given I am signed in
     And I am on the homepage
@@ -17,7 +17,7 @@ Feature: User authentication
  
   Scenario: Signing up
     Given I am on the homepage
-    When I click "Sign Up"
+    When I click "Sign up for an account here"
     And I fill in "eliza@example.com" for "Email"
     And I fill in "foobar" for "Password"
     And I fill in "foobar" for "Password confirmation"
@@ -26,7 +26,7 @@ Feature: User authentication
 
   Scenario: Signing up with non-matching passwords
     Given I am on the homepage
-    When I click "Sign Up"
+    When I click "Sign up for an account here"
     And I fill in "eliza@example.com" for "Email"
     And I fill in "foobar" for "Password"
     And I fill in "notfoobar" for "Password confirmation"

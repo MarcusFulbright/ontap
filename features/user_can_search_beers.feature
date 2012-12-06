@@ -2,7 +2,7 @@ Feature: User Can Search Beers
 
 	Background:
 	Given I am signed in
-	And I press "Add Beer"
+	And I press "Search Beers"
 
 	
 	Scenario: By Beer Name

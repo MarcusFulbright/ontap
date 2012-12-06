@@ -16,14 +16,14 @@
 <br />
 	<div class="row">
 		<div class="seven columns centered">
-			<%= link_to "Yo dawg, have an account? Just click here foo!", new_user_session_path, :class => "button large radius" %> 
+			<%= link_to "Sign into your account here", new_user_session_path, :class => "button large radius" %> 
 		</div>
 	</div>
 	<br />
 	<br />
 	<div class="row">
 		<div class="seven columns centered">
-			<%= link_to "You a sucka without an account? Just click here", new_user_registration_path, :class => "button large radius" %>
+			<%= link_to "Sign up for an account here", new_user_registration_path, :class => "button large radius", :name => "sign_up" %>
 		</div>
 <%- end %>
 
