@@ -11,14 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121129192806) do
-
-  create_table "beer_lists", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "userID"
-    t.integer  "beerID"
-  end
+ActiveRecord::Schema.define(:version => 20121213200139) do
 
   create_table "beers", :force => true do |t|
     t.string   "name"
