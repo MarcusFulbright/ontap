@@ -1,5 +1,5 @@
 Feature: View Beer List
-
+	
 	Scenario: No Beers
 		Given I am signed in
 		And I press "My Beers"
