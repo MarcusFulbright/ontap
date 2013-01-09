@@ -1,5 +1,6 @@
 class Beer < ActiveRecord::Base
 	attr_accessible :name, :user_id
-	belongs_to :user
+	has_many :beer_lists
+	has_many :users, :through => :user_beers
 
 end

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-	has_many :beers
+	has_many :user_beers
+  has_many :beers, :through => :user_beers
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
