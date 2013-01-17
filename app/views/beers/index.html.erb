@@ -1,18 +1,15 @@
-<% if current_user.beers? %>
-	<ul style="list-style-type: none">
-		<%- for name in @names %> 
-			<div class = "row">
-				<li class="panel seven columns">
-					<%= name %>	
-				</li>
-			</div>
-		<%- end %>
-	</ul>
-<% else %>
+<ul style="list-style-type: none">
+	<div class = "row">
+		<li class="panel seven columns"> 
+			<%= @beer_list %>
+		</li>		
+	</div>
+</ul>
+
 <div class="row">
 	<div class="five columns centered alert-box alert text-center">
 		You Have Not Added Any Beers
 	</div>
 </div>
-<%- end %>
+
 
