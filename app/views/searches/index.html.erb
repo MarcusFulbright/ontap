@@ -7,23 +7,25 @@
 	</div>
 </div>
 
-<%- if @search.name %>
+<%- if @results %>
 <ul style="list-style-type: none">
-<%- for name in @search.name %>
 	<div class="row">
 		<div class="seven columns centered">
-
-		<li class="panel"> 
-			<div class="five columns">
-				<%= name %>
-			</div> 
-			<%= form_for Beer.new, :method => :post do |form| %>
-				<%= hidden_field_tag("beer[name]", name) %>
-				<%= form.submit "Add", :class => "button" %>
-			<%- end %>
-	    </li>
+			<%- @results["data"].each do |beer_result| %>
+				<li class="panel"> 
+					<div class="five columns">
+						<%= beer_result["name"] %>
+					</div> 
+				<%= form_for Beer.new, :method => :post do |form| %>
+					<%= hidden_field_tag("beer[name]", beer_result["name"]) %>
+					<%= hidden_field_tag("beer[api_key]", beer_result["id"]) %>
+					<%= hidden_field_tag("beer[abv]", beer_result["abv"] )%>
+					<!-- <%= hidden_field_tag("beer[description]", beer_result["description"]) %> -->
+					<%= form.submit "Add", :class => "button" %>
+				<%- end %>
+	    		</li>
+	    	<%- end %>
+		</div>
 	</div>
-	</div>
-<%- end %>
 </ul>
 <%- end %>

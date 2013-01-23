@@ -8,10 +8,6 @@ class BeersController < ApplicationController
   end
 
   def index
-     @beer_list = current_user.beers
-  end
-
-  def show
   end
 
 end
